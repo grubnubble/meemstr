@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import Input from './Components/Input/Input';
+import Tinder from './Components/Tinder/Tinder';
 
 export default class App extends React.Component {
 
   state = {
     memes: [],
   }
+  //could move fetch here instead of having input component
 
   render() {
     return (
@@ -16,6 +18,7 @@ export default class App extends React.Component {
         />
         <Text style={styles.text}>Welcome to Meemstr!</Text>
         <Text style={styles.text}>The true meeming of love</Text>
+        
       </View>
     );
   }

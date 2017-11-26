@@ -6,19 +6,20 @@ export default class Input extends React.Component {
 	state = {
 
 	}
+	//this.props.updateMemes(t.data.memes)
 
 	fetch = () => {
 		// console.log('this is the value: ', this.props.value)
 		// fetch json for 100 memes 
 		fetch(`https://api.imgflip.com/get_memes`)
 		.then((response) => {return response.json() })
-		.then((data) => console.log('data: ', data))
+		.then((t) => console.log('dataSTUFF: ', t.data.memes))
 
 	}
 
 	render () {
 		return (
-		        <View style={styles.container}>
+		        <View>
 		        	<TouchableHighlight
 		        		onPress={() => this.fetch()}
 		        		style={styles.button}
