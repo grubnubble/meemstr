@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View, Image} from 'react-native';
 import SwipeCards from 'react-native-swipe-cards';
 
 //card component to display a single meme
@@ -7,7 +7,10 @@ class Card extends React.Component {
 		render () {
 		return (
 		        <View style={styles.card}>
-		        	 <Text>{this.props.memes}</Text>
+		        	 <Image
+		        	 	style={{width: 300, height: 250}}
+		        	 	source={{uri: this.props.meme}}
+		        	 />
 		        </View>
 		)
 	}
@@ -19,7 +22,7 @@ class Card extends React.Component {
 class EndCard extends React.Component {
 	render () {
 		return (
-		        <View style={styles.card}>
+		        <View >
 		        	<Text>Uh oh, out of memes!</Text>
 		        	<View style={styles.button}>
 		        		<Text style={styles.text}>Load more?</Text>
@@ -31,12 +34,24 @@ class EndCard extends React.Component {
 
 //main component
 export default class Tinder extends React.Component {
-		render () {
+
+	handleAccept () {
+		console.log("I like this meme.");
+	}
+
+	handleReject () {
+		console.log("I hate this meme.");
+	}
+
+	render () {
 		return (
 		        <View>
 		        	<SwipeCards
 		        		cards={this.props.memes}
-		        		renderCard={(meme) => <Card meme={meme} />}
+		        		renderCard={(meme) => <Card meme={meme.url} />}
+		        		renderNoMoreCards={() => <EndCard/>}
+		        		handleYup={this.handleAccept}
+		        		handleNope={this.handleReject}
 		        	/>
 		        </View>
 		)

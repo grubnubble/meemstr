@@ -11,14 +11,19 @@ export default class App extends React.Component {
   //could move fetch here instead of having input component
 
   render() {
+    // console.log("app.js memes: ", this.state.memes)
     return (
       <View style={styles.container}>
-        <Input
-          updateMemes={(memes) => this.setState({ memes: memes })}
-        />
         <Text style={styles.text}>Welcome to Meemstr!</Text>
         <Text style={styles.text}>The true meeming of love</Text>
-        
+        <Input 
+          updateMemes={(memes) => this.setState({ memes: memes })}
+        />
+
+        <Tinder
+          memes={this.state.memes}
+          style={styles.tinder}
+          />
       </View>
     );
   }
@@ -32,6 +37,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 5,
     borderColor: 'red'
+  },
+  tinder: {
+    flex: 2,
   },
   button: {
     width: 100,
@@ -47,5 +55,6 @@ const styles = StyleSheet.create({
   text: {
     color: 'gray',
     fontWeight: 'bold',
+    marginBottom: 45,
   }
 });
