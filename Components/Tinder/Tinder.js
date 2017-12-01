@@ -6,12 +6,12 @@ import SwipeCards from 'react-native-swipe-cards';
 class Card extends React.Component {
 		render () {
 
-		let testURL = 'https://api.imgur.com/3/gallery/hot/viral/0.json';
+		// let testURL = 'https://api.imgur.com/3/gallery/hot/viral/0.json';
 
 		return (
-		        <View style={styles.card}>
+		        <View style={styles.container}>
 		        	 <Image
-		        	 	style={{width: 400, height: 400}}
+		        	 	style={{width: 350, height: 350}}
 		        	 	source={{uri: this.props.meme}}
 		        	 />
 		        </View>
@@ -25,7 +25,7 @@ class Card extends React.Component {
 class EndCard extends React.Component {
 	render () {
 		return (
-		        <View >
+		        <View style={styles.container}>
 		        	<Text>Uh oh, out of memes!</Text>
 		        	<View style={styles.button}>
 		        		<Text style={styles.text}>Load more?</Text>
@@ -49,7 +49,7 @@ export default class Tinder extends React.Component {
 	render () {
 		return (
 		        <View>
-		        	<SwipeCards
+		        	<SwipeCards 
 		        		cards={this.props.memes}
 		        		renderCard={(meme) => <Card meme={meme.url} />}
 		        		renderNoMoreCards={() => <EndCard/>}
@@ -63,14 +63,16 @@ export default class Tinder extends React.Component {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: 'white',
-		alignItems: 'center',
-		justifyContent: 'center',
-		margin: 20,
-		padding: 5
-	},
+	  container: {
+	    backgroundColor: '#FCD2EC',
+	    alignItems: 'center',
+	    justifyContent: 'center',
+	    borderRadius: 5,
+	    borderWidth: 3,
+	    borderColor: 'gray',
+	    margin: 3,
+	    padding: 45,
+	  },
 	card: {
 		width: 300,
 		height: 300,
@@ -82,22 +84,12 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
-	input: {
-		height: 40,
-		width: 300,
-		borderColor: 'gray',
-		backgroundColor: 'white',
-		borderWidth: 2,
-		margin: 3
-	},
 	  button: {
 	    width: 100,
 	    height: 50,
 	    alignItems: 'center',
 	    justifyContent: 'center',
 	    backgroundColor: '#F887CD',
-	    marginBottom: 50,
-	    marginTop: 10,
 	    borderColor: 'gray',
 	    borderRadius: 4,
 	    borderWidth: 2

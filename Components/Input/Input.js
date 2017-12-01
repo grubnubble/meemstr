@@ -22,7 +22,7 @@ export default class Input extends React.Component {
 
 	render () {
 		return (
-		        <View >
+		        <View style={styles.container}>
 		        	<TouchableHighlight
 		        		onPress={() => this.fetch()}
 		        		style={styles.button}
@@ -37,14 +37,18 @@ export default class Input extends React.Component {
 
 //flex: 1 means take up the entire screen (no divisions)
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: 'white',
-		alignItems: 'center',
-		justifyContent: 'center',
-		margin: 20,
-		padding: 5
-	},
+	  container: {
+	    flex: 1,
+	    backgroundColor: 'white',
+	    alignItems: 'center',
+	    width: 400,
+	    justifyContent: 'center',
+	    borderRadius: 5,
+	    borderWidth: 3,
+	    borderColor: 'gray',
+	    margin: 3,
+	    padding: 45,
+	  },
 	input: {
 		height: 40,
 		width: 300,
@@ -54,12 +58,11 @@ const styles = StyleSheet.create({
 		margin: 3
 	},
 	  button: {
-	    width: 100,
+	    width: 150,
 	    height: 50,
 	    alignItems: 'center',
 	    justifyContent: 'center',
 	    backgroundColor: '#F887CD',
-	    marginBottom: 50,
 	    borderColor: 'gray',
 	    borderRadius: 4,
 	    borderWidth: 2
