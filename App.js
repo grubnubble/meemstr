@@ -22,7 +22,6 @@ export default class App extends React.Component {
 
         <Tinder
           memes={this.state.memes}
-          style={styles.tinder}
           />
       </View>
     );

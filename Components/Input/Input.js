@@ -9,6 +9,8 @@ export default class Input extends React.Component {
 	//this.props.updateMemes(t.data.memes)
 	//console.log("t.data.memes:  ", t.data.memes)
 
+	//fetch(`https://api.imgflip.com/get_memes`)
+
 	fetch = () => {
 		// console.log('this is the value: ', this.props.value)
 		// fetch json for 100 memes 

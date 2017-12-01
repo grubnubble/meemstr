@@ -5,10 +5,13 @@ import SwipeCards from 'react-native-swipe-cards';
 //card component to display a single meme
 class Card extends React.Component {
 		render () {
+
+		let testURL = 'https://api.imgur.com/3/gallery/hot/viral/0.json';
+
 		return (
 		        <View style={styles.card}>
 		        	 <Image
-		        	 	style={{width: 300, height: 250}}
+		        	 	style={{width: 400, height: 400}}
 		        	 	source={{uri: this.props.meme}}
 		        	 />
 		        </View>
